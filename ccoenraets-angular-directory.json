@@ -1,0 +1,201 @@
+{
+  "departments" : {
+    "Accounting" : "Boston, MA",
+    "Corporate" : "Boston, MA",
+    "Engineering" : "Boston, MA",
+    "Marketing" : "Boston, MA",
+    "Sales" : "Boston, MA"
+  },
+  "employees" : {
+    "-KOnNGO-vcD0LMRJpQn6" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0001",
+      "department" : "Corporate",
+      "email" : "jking@fakemail.com",
+      "firstName" : "James",
+      "lastName" : "King",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn6",
+      "officePhone" : "781-000-0001",
+      "pic" : "james_king.jpg",
+      "reports" : 4,
+      "title" : "President and CEO",
+      "twitterId" : "@fakejking"
+    },
+    "-KOnNGO-vcD0LMRJpQn7" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0002",
+      "department" : "Marketing",
+      "email" : "jtaylor@fakemail.com",
+      "firstName" : "Julie",
+      "lastName" : "Taylor",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn6",
+      "officePhone" : "781-000-0002",
+      "pic" : "julie_taylor.jpg",
+      "reports" : 2,
+      "title" : "VP of Marketing",
+      "twitterId" : "@fakejtaylor"
+    },
+    "-KOnNGO-vcD0LMRJpQn8" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0003",
+      "department" : "Accounting",
+      "email" : "elee@fakemail.com",
+      "firstName" : "Eugene",
+      "lastName" : "Lee",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn6",
+      "officePhone" : "781-000-0003",
+      "pic" : "eugene_lee.jpg",
+      "reports" : 0,
+      "title" : "CFO",
+      "twitterId" : "@fakeelee"
+    },
+    "-KOnNGO-vcD0LMRJpQn9" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0004",
+      "department" : "Engineering",
+      "email" : "jwilliams@fakemail.com",
+      "firstName" : "John",
+      "lastName" : "Williams",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn6",
+      "officePhone" : "781-000-0004",
+      "pic" : "john_williams.jpg",
+      "reports" : 3,
+      "title" : "VP of Engineering",
+      "twitterId" : "@fakejwilliams"
+    },
+    "-KOnNGO-vcD0LMRJpQnA" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0005",
+      "department" : "Sales",
+      "email" : "rmoore@fakemail.com",
+      "firstName" : "Ray",
+      "lastName" : "Moore",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn6",
+      "officePhone" : "781-000-0005",
+      "pic" : "ray_moore.jpg",
+      "reports" : 2,
+      "title" : "VP of Sales",
+      "twitterId" : "@fakermoore"
+    },
+    "-KOnNGO-vcD0LMRJpQnB" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0006",
+      "department" : "Engineering",
+      "email" : "pjones@fakemail.com",
+      "firstName" : "Paul",
+      "lastName" : "Jones",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn9",
+      "officePhone" : "781-000-0006",
+      "pic" : "paul_jones.jpg",
+      "reports" : 0,
+      "title" : "QA Manager",
+      "twitterId" : "@fakepjones"
+    },
+    "-KOnNGO-vcD0LMRJpQnC" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0007",
+      "department" : "Engineering",
+      "email" : "pgates@fakemail.com",
+      "firstName" : "Paula",
+      "lastName" : "Gates",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn9",
+      "officePhone" : "781-000-0007",
+      "pic" : "paula_gates.jpg",
+      "reports" : 0,
+      "title" : "Software Architect",
+      "twitterId" : "@fakepgates"
+    },
+    "-KOnNGO-vcD0LMRJpQnD" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0008",
+      "department" : "Marketing",
+      "email" : "lwong@fakemail.com",
+      "firstName" : "Lisa",
+      "lastName" : "Wong",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn7",
+      "officePhone" : "781-000-0008",
+      "pic" : "lisa_wong.jpg",
+      "reports" : 0,
+      "title" : "Marketing Manager",
+      "twitterId" : "@fakelwong"
+    },
+    "-KOnNGO-vcD0LMRJpQnE" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0009",
+      "department" : "Marketing",
+      "email" : "gdonovan@fakemail.com",
+      "firstName" : "Gary",
+      "lastName" : "Donovan",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn7",
+      "officePhone" : "781-000-0009",
+      "pic" : "gary_donovan.jpg",
+      "reports" : 0,
+      "title" : "Marketing Manager",
+      "twitterId" : "@fakegdonovan"
+    },
+    "-KOnNGO-vcD0LMRJpQnF" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0010",
+      "department" : "Sales",
+      "email" : "kbyrne@fakemail.com",
+      "firstName" : "Kathleen",
+      "lastName" : "Byrne",
+      "managerId" : "-KOnNGO-vcD0LMRJpQnA",
+      "officePhone" : "781-000-0010",
+      "pic" : "kathleen_byrne.jpg",
+      "reports" : 0,
+      "title" : "Sales Representative",
+      "twitterId" : "@fakekbyrne"
+    },
+    "-KOnNGO-vcD0LMRJpQnG" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0011",
+      "department" : "Sales",
+      "email" : "ajones@fakemail.com",
+      "firstName" : "Amy",
+      "lastName" : "Jones",
+      "managerId" : "-KOnNGO-vcD0LMRJpQnA",
+      "officePhone" : "781-000-0011",
+      "pic" : "amy_jones.jpg",
+      "reports" : 0,
+      "title" : "Sales Representative",
+      "twitterId" : "@fakeajones"
+    },
+    "-KOnNGO-vcD0LMRJpQnH" : {
+      "blog" : "http://coenraets.org",
+      "cellPhone" : "617-000-0012",
+      "department" : "Engineering",
+      "email" : "swells@fakemail.com",
+      "firstName" : "Steven",
+      "lastName" : "Wells",
+      "managerId" : "-KOnNGO-vcD0LMRJpQn9",
+      "officePhone" : "781-000-0012",
+      "pic" : "steven_wells.jpg",
+      "reports" : 0,
+      "title" : "Software Architect",
+      "twitterId" : "@fakeswells"
+    }
+  },
+  "teams" : {
+    "-KOnNGO-vcD0LMRJpQn6" : {
+      "-KOnNGO-vcD0LMRJpQn7" : true,
+      "-KOnNGO-vcD0LMRJpQn8" : true,
+      "-KOnNGO-vcD0LMRJpQn9" : true,
+      "-KOnNGO-vcD0LMRJpQnA" : true
+    },
+    "-KOnNGO-vcD0LMRJpQn7" : {
+      "-KOnNGO-vcD0LMRJpQnD" : true,
+      "-KOnNGO-vcD0LMRJpQnE" : true
+    },
+    "-KOnNGO-vcD0LMRJpQn9" : {
+      "-KOnNGO-vcD0LMRJpQnB" : true,
+      "-KOnNGO-vcD0LMRJpQnC" : true,
+      "-KOnNGO-vcD0LMRJpQnH" : true
+    },
+    "-KOnNGO-vcD0LMRJpQnA" : {
+      "-KOnNGO-vcD0LMRJpQnF" : true,
+      "-KOnNGO-vcD0LMRJpQnG" : true
+    }
+  }
+}
+

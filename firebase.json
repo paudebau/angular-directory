@@ -1,0 +1,17 @@
+{
+  "database": {
+    "rules": "database.rules.json"
+  },    
+  "hosting": {
+    "public": "client",
+    "ignore": [
+      "firebase.json",
+      "client/app.js",
+      "client/controllers.js",
+      "client/memory-services.js",
+      "client/rest-services.js",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
