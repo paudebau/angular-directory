@@ -1,24 +1,24 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <link href="topcoat/css/topcoat-mobile-light.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    <script src="lib/angular.js"></script>
-    <script src="lib/angular-touch.js"></script>
-    <script src="lib/angular-resource.js"></script>
-    <script src="lib/angular-animate.js"></script>
-    <script src="lib/angular-route.js"></script>
+  </head>
+  <body>
+    <div ng-view ng-class="slide"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-touch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/memory-services.js"></script>
-    <script src="js/rest-services.js"></script>
-</head>
-
-<body ng-controller="MainCtrl">
-
-<div ng-view ng-class="slide"></div>
-
-</body>
+    <script src="js/rest-services.js"></script>    
+  </body>
 </html>
