@@ -16,7 +16,8 @@ Although work in progress, an [online demo](https://ccoenraets-angular-directory
 ### Deployment
 
 Assume the local repo is `angular-directory` and the firebase project is named ` ccoenraets-angular-directory`.
-This demo assumes the database will be located within `/factory`. This is hardecoded as well in `client/js/firebase-directory.js` and `database-rules.json`.
+This demo assumes the database will be located within `/factory`.
+This is hardecoded as well in [`firebase-directory.js`](blob/master/client/js/firebase-directory.js) and [`database-rules.json`](blob/master/database-rules.json).
 
 1. Copy or clone this repository
 2. Change to this new directory and execute `firebase init` (**warning**: take care of not overwriting `client/index.html`). 
