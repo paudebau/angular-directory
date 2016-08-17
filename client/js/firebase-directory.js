@@ -3,13 +3,13 @@
 angular.module('factory', ['ngTouch', 'ui.router', 'ngAnimate', 'myApp.firebaseServices'])
 
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/employees');
+        $urlRouterProvider.otherwise('/');
 
         $locationProvider.html5Mode(true);
 
         $stateProvider
             .state('employees',
-                   {url: '/employees', templateUrl: 'partials/employee-list.html', controller: 'EmployeeListController'})
+                   {url: '/', templateUrl: 'partials/employee-list.html', controller: 'EmployeeListController'})
             .state('details',
                     {url: '/employees/:employeeId', templateUrl: 'partials/employee-detail.html', controller: 'EmployeeDetailController'})
             .state('reports',

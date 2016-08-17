@@ -30,5 +30,5 @@ At this stage, the application should be online and running at the URL provided 
 
 ### Development
 
-In ease understanding of the code, this version does not respect *good practices* as far as AngularJS development would suggest.
+To ease understanding of the code, this version does not respect *good practices* as far as AngularJS development would suggest.
 Anyway, for a beginner, it is much easier to have everything within a single file.
