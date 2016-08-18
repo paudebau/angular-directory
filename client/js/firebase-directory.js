@@ -1,11 +1,11 @@
 'use strict';
 
-angular.module('factory', ['ngTouch', 'ui.router', 'ngAnimate', 'myApp.firebaseServices'])
+angular.module('fbFactory', ['ngTouch', 'ui.router', 'ngAnimate', 'fbFactory.services'])
 
     .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise('/');
 
-        $locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
 
         $stateProvider
             .state('employees',
@@ -19,17 +19,17 @@ angular.module('factory', ['ngTouch', 'ui.router', 'ngAnimate', 'myApp.firebaseS
     .controller('EmployeeListController',
                 ['$scope', '$firebaseArray', 'directoryService', EmployeeListController])
     .controller('EmployeeDetailController',
-                ['$scope', '$stateParams', '$firebaseObject', 'directoryService', EmployeeDetailController])
+                ['$scope', '$stateParams', '$timeout', 'employeeService', EmployeeDetailController])
     .controller('ReportListController',
-                ['$scope', '$stateParams', 'reportService', ReportListController])
+                ['$scope', '$stateParams', 'reportsService', ReportsListController])
 
     .run(['$rootScope', '$window', '$location', 'Auth', function initialize($rootScope, $window, $location, Auth) {
         // Navigation
         $rootScope.slide = '';
         $rootScope.back = function () { $rootScope.slide = 'slide-right'; $window.history.back(); };
-
+        // Tracing state transitions
         $rootScope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
-            console.log('go %s ===> %s', oldUrl, newUrl);
+            console.log('go %s >> %s', oldUrl, newUrl);
         });
     }]);
 
@@ -37,46 +37,63 @@ function EmployeeListController($scope, $firebaseArray, directoryService) {
     $scope.employees = $firebaseArray(directoryService.ls('employees'));
 }
 
-function EmployeeDetailController($scope, $stateParams, $firebaseObject, directoryService) {
-    var employee = null, employeeId = $stateParams.employeeId;
-    var employees = directoryService.ls('employees');
-    var departments = directoryService.ls('departments');
-    employee = new $firebaseObject(employees.child(employeeId));
-    employee.$loaded().then(function () { // $on("value", fn) should suffice
-        $scope.employee = employee;
-        employee.managerName = '';
-        var dept = new $firebaseObject(departments.child(employee.department));
-        dept.$loaded().then(function () {
-            employee.city = dept.$value;
-            if (employee.managerId !== employeeId) {
-                var manager = new $firebaseObject(employees.child(employee.managerId));
-                manager.$loaded().then(function () {
-                    employee.managerName = manager.firstName + ' ' + manager.lastName;
-                });
-            }
+function EmployeeDetailController($scope, $stateParams, $timeout, employeeService) {
+    function callback (employee) {
+        $timeout(function () {
+            $scope.employee = employee;
         });
-    });
+    }
+    employeeService.details($stateParams.employeeId, callback);
 }
 
-function ReportListController($scope, $stateParams, reportService) {
-    $scope.employees = reportService.query($stateParams.employeeId);
+function ReportsListController($scope, $stateParams, reportsService) {
+    $scope.employees = reportsService.query($stateParams.employeeId);
 }
 
 
-angular.module('myApp.firebaseServices', ['firebase'])
+angular.module('fbFactory.services', ['firebase'])
     .factory("Auth", ["$firebaseAuth", function ($firebaseAuth) { return $firebaseAuth(); }])
     .factory('directoryService', ['$window' , directoryService])
-    .factory('reportService', ['directoryService', '$firebaseArray', reportService]);
+    .factory('employeeService', ['directoryService', '$firebaseObject', employeeService])
+    .factory('reportsService', ['directoryService', '$firebaseArray', reportsService]);
 
 function directoryService($window) {
-    var db = $window.firebase.database().ref('factory'); // should be a constant
+    var ref = $window.firebase.database().ref('factory'); // should be a constant
     return {
+        ref: function (path) {
+            return $window.firebase.database().ref('factory/' + path);
+        },
         ls: function (node) {
-            return db.child(node); }
+            return ref.child(node); }
     };
 }
 
-function reportService(directoryService, $firebaseArray) {
+function employeeService(directoryService, $firebaseObject) {
+    return {
+        details: function (employeeId, cont) {
+            var ref_e = directoryService.ref('employees/' + employeeId);
+            ref_e.on("value", function (snap_e) {
+                var employee = snap_e.val();
+                employee.id = snap_e.key;
+                employee.managerName = '';
+                var ref_d = directoryService.ref('departments/' + employee.department);
+                ref_d.on("value", function (snap_d) {
+                    employee.city = snap_d.val();
+                    if (employee.managerId !== employeeId) {
+                        var ref_m = directoryService.ref('employees/' +employee.managerId);
+                        ref_m.on("value",  function (snap_m) {
+                            var manager = snap_m.val();
+                            employee.managerName = manager.firstName + ' ' + manager.lastName;
+                            cont(employee);
+                        });
+                    }
+                });
+            });
+        }
+    };
+}
+
+function reportsService(directoryService, $firebaseArray) {
     return {
         query: function (employeeId) {
             return $firebaseArray(directoryService.ls('employees').orderByChild('managerId').equalTo(employeeId));

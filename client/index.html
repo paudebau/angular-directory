@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="factory">
+<html lang="en" ng-app="fbFactory">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
@@ -7,13 +7,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="ng Directory" />
-    <link rel="shortcut icon" sizes="16x16" href="/imgs/icon-16x16.png" />
-    <link rel="shortcut icon" sizes="196x196" href="/imgs/icon-196x196.png" />
-    <link rel="apple-touch-icon-precomposed" href="/imgs/icon-152x152.png" />
+    <link rel="shortcut icon" sizes="16x16" href="imgs/icon-16x16.png" />
+    <link rel="shortcut icon" sizes="196x196" href="imgs/icon-196x196.png" />
+    <link rel="apple-touch-icon-precomposed" href="imgs/icon-152x152.png" />
 
-    <link rel="stylesheet" type="text/css" href="/css/addtohomescreen.css">
+    <link rel="stylesheet" type="text/css" href="css/addtohomescreen.css">
 
-    <base href="/" />
+    <!--base href="/" /-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
   </head>
@@ -28,8 +28,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
 
-    <script src="//www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script src="//www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angularFire/2.0.1/angularfire.min.js"></script>
+
     <script>
 // addToHomescreen.removeSession();     // use this to remove the localStorage variable
 var ath = addToHomescreen({
@@ -55,6 +56,6 @@ var config = {
 firebase.initializeApp(config);
     </script>
 
-    <script src="/js/firebase-directory.js"></script>
+    <script src="js/firebase-directory.js"></script>
   </body>
 </html>

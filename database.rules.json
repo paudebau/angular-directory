@@ -4,7 +4,10 @@
         ".write": "auth != null",
         "factory": {
             ".read": "true",
-            ".write": "auth != null"
+            ".write": "auth != null",
+            "employees": {
+                ".indexOn": ["managerId"]
+            }
         }
     }
 }
