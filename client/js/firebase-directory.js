@@ -86,6 +86,8 @@ function employeeService(directoryService, $firebaseObject) {
                             employee.managerName = manager.firstName + ' ' + manager.lastName;
                             cont(employee);
                         });
+                    } else {
+                        cont(employee);
                     }
                 });
             });
