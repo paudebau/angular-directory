@@ -4,14 +4,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Web Application Manifest -->
+    <!--link rel="manifest" href="manifest.json" /-->
+
+    <!-- Add to home screen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ng Directory" />
+    <meta name="theme-color" content="#303F9F" />
+    <link rel="icon" sizes="192x192" href="imgs/icon-196x196.png" />
+    <link rel="icon" sizes="128x128" href="imgs/icon-152x152.png" />
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="ng Directory" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="imgs/icon-196x196.png" />
     <link rel="shortcut icon" sizes="16x16" href="imgs/icon-16x16.png" />
     <link rel="shortcut icon" sizes="196x196" href="imgs/icon-196x196.png" />
     <link rel="apple-touch-icon-precomposed" href="imgs/icon-152x152.png" />
-
-    <link rel="stylesheet" type="text/css" href="css/addtohomescreen.css">
+    
+    <!-- Tile icon for Win8 -->
+    <meta name="msapplication-TileImage" content="imgs/icon-152x152.png" />
+    <meta name="msapplication-TileColor" content="#3372DF" />
+    <meta name="msapplication-navbutton-color" content="#303F9F" />
 
     <!--base href="/" /-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/topcoat/0.8.0/css/topcoat-mobile-dark.min.css" rel="stylesheet" />
@@ -21,7 +37,6 @@
     <div ui-view ng-class="slide"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="js/addtohomescreen.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-touch.min.js"></script>
@@ -32,20 +47,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angularFire/2.0.1/angularfire.min.js"></script>
 
     <script>
-// addToHomescreen.removeSession();     // use this to remove the localStorage variable
-var ath = addToHomescreen({
-    debug: 'android',           // activate debug mode in ios emulation
-    skipFirstVisit: false,	// show at first access
-    startDelay: 0,          // display the message right away
-    lifespan: 0,            // do not automatically kill the call out
-    displayPace: 0,         // do not obey the display pace
-    privateModeOverride: true,	// show the message in private mode
-    maxDisplayCount: 0      // do not obey the max display count
-});
-// ath.clearSession();      // reset the user session
-// or:
-// addToHomescreen();
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyASjXf-A2LvK9q2LWd1NjM81hoX0njtcTI",
